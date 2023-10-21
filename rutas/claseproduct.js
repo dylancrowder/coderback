@@ -15,7 +15,7 @@ class ProductManager {
   };
 
   readProducts = async () => {
-    const allProducts = await fs.readFile(this.path, "utf-8");
+    const allProducts = await fs.readFile("../productos.txt", "utf-8");
     return JSON.parse(allProducts);
   };
 
@@ -40,7 +40,6 @@ class ProductManager {
 
   getProducts = async () => {
     let productsAll = await this.readProducts();
-    //console.log(productsAll);
   };
 
   exist = async (id) => {

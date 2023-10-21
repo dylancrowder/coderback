@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-const productosRouter = require("./rutas/rutas");
+const productosRouter = require("./rutas/products.js");
 
 app.use("/api", productosRouter);
 
@@ -13,5 +13,5 @@ const server = app.listen(port, () => {
 });
 
 server.on("error", (error) => {
-  console.log(error);
+  console.log("este es el erro", error);
 });
