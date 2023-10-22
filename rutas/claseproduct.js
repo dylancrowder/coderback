@@ -16,6 +16,7 @@ class ProductManager {
 
   readProducts = async () => {
     const allProducts = await fs.readFile("../productos.txt", "utf-8");
+
     return JSON.parse(allProducts);
   };
 
