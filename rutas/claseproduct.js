@@ -1,23 +1,31 @@
 const fs = require("fs").promises;
+const { v4: uuidv4 } = require("uuid");
 
 class ProductManager {
   constructor() {
     this.products = [];
-    this.path = "./productos.txt";
+    this.path = "./productos.txt"; 
   }
 
-  static id = 0;
-
   writeProducts = async (productos) => {
-    await fs.writeFile(this.path, JSON.stringify(productos), (error) => {
-      if (error) throw error;
-    });
+    try {
+      await fs.writeFile(
+        this.path,
+        JSON.stringify(productos, null, 2),
+        "utf-8"
+      );
+    } catch (error) {
+      throw error;
+    }
   };
 
   readProducts = async () => {
-    const allProducts = await fs.readFile("../productos.txt", "utf-8");
-
-    return JSON.parse(allProducts);
+    try {
+      const fileContents = await fs.readFile(this.path, "utf-8");
+      return JSON.parse(fileContents);
+    } catch (error) {
+      throw error;
+    }
   };
 
   addProduct = async (title, description, price, thumbnail, code, stock) => {
@@ -29,11 +37,9 @@ class ProductManager {
       code,
       stock,
     };
-
-    ProductManager.id++;
     this.products.push({
       ...newProduct,
-      id: ProductManager.id,
+      id: uuidv4(),
     });
 
     await this.writeProducts(this.products);
@@ -41,6 +47,7 @@ class ProductManager {
 
   getProducts = async () => {
     let productsAll = await this.readProducts();
+    //console.log(productsAll);
   };
 
   exist = async (id) => {
@@ -70,6 +77,7 @@ class ProductManager {
       console.log("Producto modificado Correctamente");
     }
   };
+
   deleteProducts = async (id) => {
     if (await this.exist(id)) {
       let products = await this.readProducts();
@@ -83,24 +91,3 @@ class ProductManager {
 }
 
 module.exports = { ProductManager };
-const productos = new ProductManager();
-
-productos.addProduct("puma", "azules", 120, 121, 121, 14, 422);
-
-productos.addProduct("nike", "blancas", 130, 121, 121, 122, 712);
-
-productos.addProduct("vans", "grises", 140, 121, 121, 112, 412);
-
-productos.addProduct("rebook", "moradas", 150, 121, 111, 12, 642);
-
-productos.addProduct("converse", "rosa", 160, 121, 141, 12, 712);
-
-productos.addProduct("cariuma", "negras", 170, 121, 16, 12, 62);
-
-productos.addProduct("puma", "marron", 180, 121, 121, 72, 512);
-
-productos.addProduct("puma", "celeste", 290, 121, 121, 82, 412);
-
-productos.addProduct("adidas", "marron", 380, 121, 121, 72, 312);
-
-productos.addProduct("vas", "celeste", 490, 121, 121, 512, 112);

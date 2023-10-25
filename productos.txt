@@ -1,1 +1,20 @@
-[{"title":"puma","description":"azules","price":120,"thumbnail":121,"code":121,"stock":14,"id":1},{"title":"nike","description":"blancas","price":130,"thumbnail":121,"code":121,"stock":122,"id":2},{"title":"vans","description":"grises","price":140,"thumbnail":121,"code":121,"stock":112,"id":3},{"title":"rebook","description":"moradas","price":150,"thumbnail":121,"code":111,"stock":12,"id":4},{"title":"converse","description":"rosa","price":160,"thumbnail":121,"code":141,"stock":12,"id":5},{"title":"cariuma","description":"negras","price":170,"thumbnail":121,"code":16,"stock":12,"id":6},{"title":"puma","description":"marron","price":180,"thumbnail":121,"code":121,"stock":72,"id":7},{"title":"puma","description":"celeste","price":290,"thumbnail":121,"code":121,"stock":82,"id":8},{"title":"adidas","description":"marron","price":380,"thumbnail":121,"code":121,"stock":72,"id":9},{"title":"vas","description":"celeste","price":490,"thumbnail":121,"code":121,"stock":512,"id":10},{"title":"rebook","description":"moradas","code":150,"price":121,"stock":111,"category":12,"id":"6a55efbe-259f-4037-b0a5-03f9a5cc21ec","status":true}]
+[
+  {
+    "title": "vas",
+    "description": "sddddRERaaaaaaaaaaaaaaERERERddd",
+    "price": 490,
+    "thumbnail": 121,
+    "code": 121,
+    "stock": 512,
+    "id": "a8ad5e42-7407-46e5-9805-f2efff79cda6"
+  },
+  {
+    "title": "vas",
+    "description": "sddddRERaaaaaaaaaaaaaaERERERddd",
+    "price": 490,
+    "thumbnail": 121,
+    "code": 121,
+    "stock": 512,
+    "id": "7cc5287f-2f5e-41c1-adb6-0f89292b6f88"
+  }
+]
